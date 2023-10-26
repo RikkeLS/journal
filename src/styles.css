@@ -1,3 +1,7 @@
+:root {
+    --width-elements:300px;
+}
+
 body {
     margin:0px;
     color:var(--color-granite);

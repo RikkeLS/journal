@@ -1,9 +1,20 @@
 import "./Textarea.css"
 
-export default function Textarea (nameAndID) {
+export default function Textarea ({className, nameAndID, labelText}) {
     return (
-        <textarea name={nameAndID} id={nameAndID}>
+        <>
+        <label 
+             className={className+'-label'}
+             htmlFor={nameAndID}>
+            {labelText}
+        </label>
 
+        <textarea             
+            className={className}
+            name={nameAndID}
+            id={nameAndID}>
         </textarea>
+        </>
+
     )
   }

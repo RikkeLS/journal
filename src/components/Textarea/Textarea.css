@@ -1,0 +1,19 @@
+.entry-form__textarea{
+    border: 1px solid var(--color-water-10);
+    width: var(--width-elements);
+    border-radius: 5px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.entry-form__textarea-label {
+    position: relative;
+    right:calc(var(--width-elements)*0.42);
+}
+
+.entry-form__textarea:hover {
+    border: 1px solid var(--color-nemo-dark);
+}
+.entry-form__textarea:active {
+    border: 1px solid var(--color-nemo-dark);
+}
