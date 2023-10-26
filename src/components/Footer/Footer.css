@@ -1,0 +1,9 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-granite);
+    color: var(--color-foam);
+    position: fixed;
+    bottom:0px;
+    width: 100vw;
+}

@@ -1,0 +1,8 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    background-color: var(--color-foam);
+    margin-bottom: 100px;/* change to height of footer */
+}

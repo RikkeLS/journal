@@ -1,0 +1,13 @@
+.button {
+    background-color: var(--color-nemo);
+    color: var(--color-foam);
+    border: none;
+}
+
+.button:active {
+    background-color: var(--color-nemo-mid);
+}
+
+.button:hover {
+    background-color: var(--color-nemo-dark);
+}
