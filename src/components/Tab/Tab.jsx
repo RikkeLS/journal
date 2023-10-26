@@ -1,11 +1,12 @@
 import "./Tab.css"
 
 import Badge from "../Badge/Badge"
-export default function Tab ({text,numberOfEntries}) {
+export default function Tab ({text,numberOfEntries,selected}) {
     return (
       <>
-        <p>{text}</p>
-        <Badge number={numberOfEntries} />
+        <p className={`tabBar__text tabBar__text${selected ? "-selected":""}`}>
+        {text}</p>
+        <Badge number={numberOfEntries} selected={selected} />
       </>
     )
   }
