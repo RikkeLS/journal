@@ -1,0 +1,19 @@
+.tabBar__badge {
+    background-color: var(--color-water-10);
+    border-radius: 40%;
+    width: 30px;
+    text-align: center;
+    margin-right: 30px;
+}
+.tabBar__badge-selected {
+    background-color: var(--color-nemo);
+    color: var(--color-foam);
+}
+
+.tabBar__badge:hover {
+    background-color: var(--color-nemo-dark);
+}
+
+.tabBar__badge:active {
+    background-color: var(--color-nemo-mid);
+}

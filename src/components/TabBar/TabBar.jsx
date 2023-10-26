@@ -3,10 +3,9 @@ import Tab from "../Tab/Tab"
 
 export default function TabBar () {
     return (
-      <>
-      Tab Bar: 
-      <Tab text="All Entries" numberOfEntries={42}/>
-      <Tab text="Favorites" numberOfEntries={4} />
-      </>
+      <section className="tabBar" >
+      <Tab text="All Entries" numberOfEntries={42} selected={true}/>
+      <Tab text="Favorites" numberOfEntries={4} selected={false} />
+      </section>
     )
   }

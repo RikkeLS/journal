@@ -1,0 +1,6 @@
+.tabBar__text {
+    font-weight: bold;
+}
+.tabBar__text-selected {
+    color: var(--color-nemo);
+}
