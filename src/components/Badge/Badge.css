@@ -4,6 +4,9 @@
     width: 30px;
     text-align: center;
     margin-right: 30px;
+    font-size: small;
+    font-weight: bold;
+    align-self: center;
 }
 .tabBar__badge-selected {
     background-color: var(--color-nemo);
