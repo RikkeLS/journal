@@ -11,9 +11,17 @@
 
 .entries__list__entry__date {
     text-align: center;
+    margin: 0px;
+    margin-top: 20px;
 }
 .entries__list__entry__mottoAndIconContainer__motto {
     font-weight: bold;    
+}
+.entries__list__entry__mottoAndIconContainer__motto::before {
+    content:open-quote;
+}
+.entries__list__entry__mottoAndIconContainer__motto::after {
+    content:close-quote;
 }
 .entries__list__entry__text {
     
