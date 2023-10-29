@@ -1,3 +1,20 @@
 .entries__list__entry {
+    width:var(--width-elements);
+    border-bottom: 2px solid var(--color-water-10);
+    padding-bottom: 20px;
+}
+
+.entries__list__entry__mottoAndIconContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.entries__list__entry__date {
+    text-align: center;
+}
+.entries__list__entry__mottoAndIconContainer__motto {
+    font-weight: bold;    
+}
+.entries__list__entry__text {
     
 }
