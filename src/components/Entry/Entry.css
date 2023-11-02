@@ -1,6 +1,5 @@
 .entries__list__entry {
     width:var(--width-elements);
-    border-bottom: 2px solid var(--color-water-10);
     padding-bottom: 20px;
 }
 
@@ -13,6 +12,8 @@
     text-align: center;
     margin: 0px;
     margin-top: 20px;
+    border-top: 2px solid var(--color-water-10);
+    padding-top: 15px;
 }
 .entries__list__entry__mottoAndIconContainer__motto {
     font-weight: bold;    
