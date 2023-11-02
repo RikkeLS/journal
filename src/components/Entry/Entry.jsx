@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./Entry.css";
 
 import IconButton from "../IconButton/IconButton"
