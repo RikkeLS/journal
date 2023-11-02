@@ -15,6 +15,8 @@ import './components/EntriesSection/EntriesSection.css'
 import TabBar from './components/TabBar/TabBar'
 import './components/TabBar/TabBar.css'
 import EntryList from './components/EntryList/EntryList'
+import Entry from './components/Entry/Entry'
+import { initialEntries } from './resources/initialEntries'
 
 console.clear()
 
@@ -26,7 +28,9 @@ function App() {
       <EntryForm/>
       <EntriesSection>
         <TabBar/>
-        <EntryList/>
+        <EntryList>
+          <Entry entries={initialEntries}/>
+        </EntryList>
       </EntriesSection>
       </Main>
       <Footer/>
