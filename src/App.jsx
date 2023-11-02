@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import useLocalStorageState from 'use-local-storage-state'
 import { uid } from 'uid'
 // import './App.css'
 import './styles.css'
@@ -22,7 +23,7 @@ import { initialEntries } from './resources/initialEntries'
 console.clear()
 
 function App() { 
-  const [entries,setEntries] = useState(initialEntries)
+  const [entries,setEntries] = useLocalStorageState('entries',{defaultValue:initialEntries})
 
   
   function handleAddEntry(newEntry) {
@@ -33,7 +34,7 @@ function App() {
     const day = date.getDate();
     const year = date.getFullYear();
     const currentDate = `${month} ${day}, ${year}`;
-    setEntries([{...newEntry,'id':uid(),'date': currentDate},...entries])
+    setEntries([{'id':uid(),'date':currentDate,'isBookmarked':false,...newEntry},...entries])
     console.log(entries);
   }
   return (
