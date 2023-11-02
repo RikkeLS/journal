@@ -1,4 +1,5 @@
-// import { useState } from 'react'
+import { useState } from 'react'
+import { uid } from 'uid'
 // import './App.css'
 import './styles.css'
 import './resources/colors.css'
@@ -21,15 +22,29 @@ import { initialEntries } from './resources/initialEntries'
 console.clear()
 
 function App() { 
+  const [entries,setEntries] = useState(initialEntries)
+
+  
+  function handleAddEntry(newEntry) {
+    const months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
+    const date = new Date();
+    const monthNum = date.getMonth();
+    const month = months[monthNum]
+    const day = date.getDate();
+    const year = date.getFullYear();
+    const currentDate = `${month} ${day}, ${year}`;
+    setEntries([{...newEntry,'id':uid(),'date': currentDate},...entries])
+    console.log(entries);
+  }
   return (
     <>
     <Header/>
       <Main>
-      <EntryForm/>
+      <EntryForm onAddEntry={handleAddEntry}/>
       <EntriesSection>
         <TabBar/>
         <EntryList>
-          <Entry entries={initialEntries}/>
+          <Entry entries={entries}/>
         </EntryList>
       </EntriesSection>
       </Main>

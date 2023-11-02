@@ -3,14 +3,19 @@ import Button from "../Button/Button"
 import Input from "../Input/Input"
 import Textarea from "../Textarea/Textarea"
 
-export default function EntryForm () {
-  console.log('in entryform');
+export default function EntryForm ({onAddEntry}) {
   function handleSubmit(event) {
     event.preventDefault();
-    console.log('submitted');
+    
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    // console.log(data);
+    onAddEntry(data)
+    // event.target.reset()
+    event.target.motto.focus()
   }
   return (
-    <form className='entry-form'>
+    <form className='entry-form' onSubmit={handleSubmit}>
       <h3>NEW ENTRY</h3>
       <Input 
       className='entry-form__input'
@@ -21,7 +26,7 @@ export default function EntryForm () {
       nameAndID='notes'
       labelText='Notes'
       />
-      <Button onClick={handleSubmit}
+      <Button 
       buttonType='submit'>
       Create
       </Button>

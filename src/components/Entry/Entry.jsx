@@ -12,7 +12,7 @@ export default function Entry ({entries}) {
         <p className="entries__list__entry__mottoAndIconContainer__motto">{entry.motto}</p>
         <IconButton isBookmarked={entry.isBookmarked} />
         </section>  
-        <article className="entries__list__entry__text">{entry.text}</article>     
+        <article className="entries__list__entry__text">{entry.notes}</article>     
         </>
       ))}
     </li>
