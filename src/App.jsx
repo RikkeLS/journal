@@ -25,7 +25,6 @@ console.clear()
 function App() { 
   const [entries,setEntries] = useLocalStorageState('entries',{defaultValue:initialEntries})
 
-  
   function handleAddEntry(newEntry) {
     const months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
     const date = new Date();
@@ -40,6 +39,8 @@ function App() {
   function handleToggleBookmark(id) {
     setEntries(entries.map(entry => entry.id===id ? {...entry,isBookmarked:!entry.isBookmarked}: entry ))
   }
+
+
   return (
     <>
     <Header/>
