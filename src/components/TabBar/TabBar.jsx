@@ -1,11 +1,11 @@
 import "./TabBar.css"
 import Tab from "../Tab/Tab"
 
-export default function TabBar () {
+export default function TabBar ({numberOfEntries,numberOfFavorites}) {
     return (
       <section className="tabBar" >
-      <Tab text="All Entries" numberOfEntries={42} selected={true}/>
-      <Tab text="Favorites" numberOfEntries={4} selected={false} />
+      <Tab text="All Entries" numberOfEntries={numberOfEntries} selected={true}/>
+      <Tab text="Favorites" numberOfEntries={numberOfFavorites} selected={false} />
       </section>
     )
   }

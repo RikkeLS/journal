@@ -40,14 +40,13 @@ function App() {
   function handleToggleBookmark(id) {
     setEntries(entries.map(entry => entry.id===id ? {...entry,isBookmarked:!entry.isBookmarked}: entry ))
   }
-
   return (
     <>
     <Header/>
       <Main>
       <EntryForm onAddEntry={handleAddEntry}/>
       <EntriesSection>
-        <TabBar/>
+        <TabBar numberOfEntries={entries.length} numberOfFavorites={entries.filter(entry=>entry.isBookmarked===true).length}/>
         <EntryList>
           <Entry onToggleBookmark={handleToggleBookmark} entries={entries}/>
         </EntryList>
