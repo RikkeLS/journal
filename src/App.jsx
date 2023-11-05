@@ -39,7 +39,12 @@ function App() {
   function handleToggleBookmark(id) {
     setEntries(entries.map(entry => entry.id===id ? {...entry,isBookmarked:!entry.isBookmarked}: entry ))
   }
-
+  const [AllSelected,setAllSelected] = useState(true)
+  
+  function handleSelected(type) {
+    const newSelected = (AllSelected && type==='fav') || (!AllSelected && type==='all')  ? !AllSelected : AllSelected 
+    setAllSelected(newSelected)
+  }
 
   return (
     <>
@@ -47,7 +52,7 @@ function App() {
       <Main>
       <EntryForm onAddEntry={handleAddEntry}/>
       <EntriesSection>
-        <TabBar allEntries={entries.length} numberOfFavorites={entries.filter(entry=>entry.isBookmarked===true).length}/>
+        <TabBar AllSelected={AllSelected} onSelected={handleSelected} allEntries={entries.length} numberOfFavorites={entries.filter(entry=>entry.isBookmarked===true).length}/>
         <EntryList>
           <Entry onToggleBookmark={handleToggleBookmark} entries={entries}/>
         </EntryList>
