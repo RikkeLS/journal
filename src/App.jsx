@@ -46,7 +46,7 @@ function App() {
       <Main>
       <EntryForm onAddEntry={handleAddEntry}/>
       <EntriesSection>
-        <TabBar numberOfEntries={entries.length} numberOfFavorites={entries.filter(entry=>entry.isBookmarked===true).length}/>
+        <TabBar allEntries={entries.length} numberOfFavorites={entries.filter(entry=>entry.isBookmarked===true).length}/>
         <EntryList>
           <Entry onToggleBookmark={handleToggleBookmark} entries={entries}/>
         </EntryList>
