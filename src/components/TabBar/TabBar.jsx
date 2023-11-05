@@ -2,10 +2,10 @@ import "./TabBar.css"
 import Tab from "../Tab/Tab"
 import { useState } from "react"
 
-export default function TabBar ({allEntries,numberOfFavorites,onSelected}) { 
+export default function TabBar ({allEntries,numberOfFavorites}) { 
   const [AllSelected,setAllSelected] = useState(true)
   
-  function handleSelected(selected,type) {
+  function handleSelected(type) {
     const newSelected = (AllSelected && type==='fav') || (!AllSelected && type==='all')  ? !AllSelected : AllSelected 
     setAllSelected(newSelected)
   }
