@@ -37,6 +37,10 @@ function App() {
     setEntries([{'id':uid(),'date':currentDate,'isBookmarked':false,...newEntry},...entries])
     console.log(entries);
   }
+  function handleToggleBookmark(id) {
+    setEntries(entries.map(entry => entry.id===id ? {...entry,isBookmarked:!entry.isBookmarked}: entry ))
+  }
+
   return (
     <>
     <Header/>
@@ -45,7 +49,7 @@ function App() {
       <EntriesSection>
         <TabBar/>
         <EntryList>
-          <Entry entries={entries}/>
+          <Entry onToggleBookmark={handleToggleBookmark} entries={entries}/>
         </EntryList>
       </EntriesSection>
       </Main>
