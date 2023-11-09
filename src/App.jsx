@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import useLocalStorageState from 'use-local-storage-state'
 import { uid } from 'uid'
-// import './App.css'
 import './styles.css'
 import './resources/colors.css'
 import Main from './components/Main/Main'
@@ -34,7 +33,6 @@ function App() {
     const year = date.getFullYear();
     const currentDate = `${month} ${day}, ${year}`;
     setEntries([{'id':uid(),'date':currentDate,'isBookmarked':false,...newEntry},...entries])
-    console.log(entries);
   }
   function handleToggleBookmark(id) {
     setEntries(entries.map(entry => entry.id===id ? {...entry,isBookmarked:!entry.isBookmarked}: entry ))
@@ -45,6 +43,7 @@ function App() {
     const newSelected = (AllSelected && type==='fav') || (!AllSelected && type==='all')  ? !AllSelected : AllSelected 
     setAllSelected(newSelected)
   }
+  const bookmarkedEntries = entries.filter( entry => entry.isBookmarked === true )
 
   return (
     <>
@@ -54,7 +53,7 @@ function App() {
       <EntriesSection>
         <TabBar AllSelected={AllSelected} onSelected={handleSelected} allEntries={entries.length} numberOfFavorites={entries.filter(entry=>entry.isBookmarked===true).length}/>
         <EntryList>
-          <Entry onToggleBookmark={handleToggleBookmark} entries={entries}/>
+          <Entry onToggleBookmark={handleToggleBookmark} entries={AllSelected ? entries : bookmarkedEntries}/>
         </EntryList>
       </EntriesSection>
       </Main>
